@@ -51,6 +51,8 @@ main {
   align-items: center;
   width: 100%;
   padding: 5rem 5rem 0;
+  flex-direction: column;
+  gap: 5rem;
 }
 
 /* main style ends */
@@ -149,4 +151,43 @@ main {
 .leaderboard table tbody tr td:nth-child(2) {
   text-align: center;
 }
+
 /* leaderboard box style ends */
+
+/* play section style start */
+
+#play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+#play input {
+  width: 40%;
+  padding: 0.4rem 1rem;
+  background-color: inherit;
+  border: 2px solid var(--main-color);
+  border-radius: 1rem;
+  color: var(--white);
+  font-size: 1.1rem;
+}
+
+#play a {
+  text-decoration: none;
+  color: var(--white);
+  background-color: var(--main-color);
+  padding: 0.5rem 4rem;
+  border-radius: 1rem;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 4px 4px #222;
+}
+
+#play a:hover {
+  background-color: inherit;
+  border: 2px solid var(--main-color);
+}
+
+/* play section style ends */
