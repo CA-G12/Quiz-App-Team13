@@ -12,11 +12,29 @@
   --background: #333;
   --black: #000;
   --white: #fff;
-  --header: #48A1A7;
+  --header: #48a1a7;
+}
+
+/*! Common Stuff */
+html {
+  font-size: 62.5%;
 }
 
 body {
   background-color: var(--background);
+}
+
+/*! End Of Common Stuff */
+
+/*! Questions Section */
+.numbers {
+  font-size: 2rem;
+}
+
+.questions {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* header style starts */
@@ -27,6 +45,70 @@ header {
   align-items: center;
 }
 
+.question-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+#questionName {
+  font-size: 5rem;
+  font-weight: 700;
+}
+
+.answers {
+  font-size: 2rem;
+  font-weight: 700;
+  color: black;
+}
+
+.labels {
+  width: 50rem;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 2rem;
+  background-color: var(--main-color);
+  text-align: center;
+}
+
+input[type='radio'] {
+  background-color: #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-block;
+  height: 15px;
+  position: relative;
+  width: 15px;
+  -webkit-appearance: none;
+}
+
+input[type='radio']:after {
+  background-color: #444;
+  border-radius: 25px;
+  content: '';
+  display: block;
+  height: 7px;
+  left: 4px;
+  position: relative;
+  top: 4px;
+  width: 7px;
+}
+
+input[type='radio']:checked:after {
+  background-color: #f66;
+}
+
+.question-card button {
+  padding: 0.5rem;
+  outline: none;
+  background-color: var(--white);
+  border: none;
+}
+/*! End Of Questions Section */
 
 header h1 {
   font-size: 2.5rem;
