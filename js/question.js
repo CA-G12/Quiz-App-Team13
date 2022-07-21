@@ -26,6 +26,24 @@ const questions = [{
     answer: "باااابا",
 }];
 
+//Questions Numbers Name
+const questionNumberName = {
+    1  :  "السؤال الأول",
+    2 :  "السؤال الثاني",
+    3  : "السؤال الثالث",
+    4 :  "السؤال الرابع",  
+    5  :  "السؤال الخامس",
+    6  :  "السؤال السادس",  
+    7  :  "السؤال السابع",
+    8  :  "السؤال الثامن",  
+    9  : "السؤال التاسع",
+    10 :  "السؤال العاشر",
+}
+
+
+
+    console.log(questionNumberName[3]);
+
 //Add Data to local Storage
 localStorage.setItem('questions', JSON.stringify(questions));
 
@@ -46,7 +64,7 @@ function initGame() {
 function displayQuestions(question) {
     if (index < 5) {
         document.getElementById('questionName').innerText = question.question;
-
+        document.getElementById('questionNumber').innerText = questionNumberName[index+1];
         for (let i = 0; i < question.answers.length; i++) {
             document.getElementsByTagName('label')[i].innerHTML = question.answers[i];
             document.getElementsByName('answer')[i].setAttribute('value', question.answers[i]);
