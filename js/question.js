@@ -1,5 +1,4 @@
 //Questions 
-
 const questions = [{
     question: 'مين حبيب بابا؟',
     answers: ['باسل', 'فادي', 'الوادية', 'أنا'],
@@ -51,7 +50,7 @@ const questions = [{
     answer: "باااابا",
 }];
 
-//Questions Numbers and Names Map
+//Questions Numbers and Names Map 
 const questionNumberName = {
     1  :  "السؤال الأول",
     2 :  "السؤال الثاني",
@@ -65,9 +64,12 @@ const questionNumberName = {
     10 :  "السؤال العاشر",
 }
 
+//Get Users Object from local Storage
+const usersData = JSON.parse(localStorage.getItem('users'));
 
-
-    console.log(questionNumberName[3]);
+//Get UsersID form Start Page
+let currentUserId = window.location.href.split("=")[1];
+console.log(currentUserId, "User Id");
 
 //Add Data to local Storage
 localStorage.setItem('questions', JSON.stringify(questions));
@@ -80,43 +82,56 @@ initGame();
 //Initialize the game
 function initGame() {
     const setOfQuestions = JSON.parse(localStorage.getItem('questions'));
-    const FIRST_QUESTION = setOfQuestions[0]
-
+    const FIRST_QUESTION = setOfQuestions[0];
+    document.getElementById('socreSection').style.display = "none";
     displayQuestions(FIRST_QUESTION);
+
 }
 
 // Display Questions
 function displayQuestions(question) {
+    console.log(score);
+    
+    
     if (index < 10) {
         document.getElementById('questionName').innerText = question.question;
         document.getElementById('questionNumber').innerText = questionNumberName[index+1];
+
         for (let i = 0; i < question.answers.length; i++) {
             document.getElementsByTagName('label')[i].innerHTML = question.answers[i];
             document.getElementsByName('answer')[i].setAttribute('value', question.answers[i]);
         }
 
-        //Get the users answer and Icrease the score if correct
-        let usersAnswer = document.querySelector('input[name="answer"]:checked');
-        console.log(usersAnswer.value == question.answer);
-        if (usersAnswer.value == question.answer) {
-            score += 1;
-        }
-
-
-
         //Get next question
-
         document.getElementById('nextQuestion').addEventListener('click', nextQuestion);
+
     } else {
-        document.getElementById('questionsSection').remove();
-        }
+        // let foundUser = usersData.filter(el => el.id === currentUserId);
+        usersData[currentUserId].score = score;
+        finishGame();
+    }
 }
 
 
 //Get Next Question
-function nextQuestion() {
+function nextQuestion() {   
+    
+    //Get the users answer and Increase the score if correct
+   let usersAnswer = document.querySelector('input[name="answer"]:checked');
+   if (usersAnswer.value === questions[index].answer) {
+    score += 1;
+    }
+
+   console.log(usersAnswer.value);
+
     index += 1;
     displayQuestions(questions[index]);
+}
+
+function finishGame(){
+    document.getElementById('questionsSection').remove();
+    document.getElementById('socreSection').style.display = "flex";
+    document.getElementById('userScore').innerHTML = score + "/10"; 
 }
 
 
