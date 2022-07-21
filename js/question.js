@@ -37,10 +37,10 @@ initGame();
 //Initialize the game
 function initGame() {
     const setOfQuestions = JSON.parse(localStorage.getItem('questions'));
-    console.log(setOfQuestions)
-    displayQuestions(setOfQuestions[index]);
-}
+    const FIRST_QUESTION = setOfQuestions[0]
 
+    displayQuestions(FIRST_QUESTION);
+}
 
 // Display Questions
 function displayQuestions(question) {
