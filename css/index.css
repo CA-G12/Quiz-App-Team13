@@ -85,3 +85,68 @@ main {
 }
 
 /* description box style ends */
+
+.leaderboard {
+  background-color: var(--main-color);
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  color: var(--white);
+  box-shadow: 0px 5px 50px #222222;
+  outline: 3px solid #222;
+}
+
+.leaderboard table,
+.leaderboard thead,
+.leaderboard tbody {
+  width: 100%;
+}
+
+.leaderboard table thead tr {
+  display: flex;
+  justify-content: space-between;
+}
+
+.leaderboard table thead tr td{
+  border-bottom: 1.5px solid #222;
+  padding-bottom: 0.2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  width: 100%;
+}
+
+.leaderboard table thead tr td:nth-child(2) {
+  text-align: center;
+}
+
+.leaderboard table tbody,
+.leaderboard table {
+  height: 100%;
+}
+
+.leaderboard table tbody,
+.leaderboard table thead {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.leaderboard table tbody {
+  margin-top: 1rem;
+}
+
+.leaderboard table tbody tr {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.leaderboard table tbody tr td{
+  border-bottom: 1.5px solid #222;
+  padding-bottom: 0.2rem;
+  width: 100%;
+}
+
+.leaderboard table tbody tr td:nth-child(2) {
+  text-align: center;
+}
+/* leaderboard box style ends */
