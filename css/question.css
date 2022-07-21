@@ -29,10 +29,13 @@ body {
 /*! Questions Section */
 .numbers {
   font-size: 2rem;
+  font-weight: 300;
+  text-align: center;
+  color: var(--white);
 }
 
 .questions {
-  height: 100vh;
+  margin-top: 20rem;
   display: flex;
   flex-direction: column;
 }
@@ -56,62 +59,45 @@ header {
 #questionName {
   font-size: 5rem;
   font-weight: 700;
+  color: var(--white);
 }
 
 .answers {
   font-size: 2rem;
-  font-weight: 700;
-  color: black;
+  font-weight: 500;
+  color: white;
 }
 
 .labels {
   width: 50rem;
-  padding: 0 2rem;
+  padding: 0.5rem 2rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  gap: 2rem;
+  gap: 1rem;
   background-color: var(--main-color);
+  border-radius: 1rem;
   text-align: center;
+  color: white;
 }
 
-input[type='radio'] {
-  background-color: #ddd;
-  border-radius: 10px;
-  cursor: pointer;
-  display: inline-block;
-  height: 15px;
-  position: relative;
-  width: 15px;
-  -webkit-appearance: none;
-}
-
-input[type='radio']:after {
-  background-color: #444;
-  border-radius: 25px;
-  content: '';
-  display: block;
-  height: 7px;
-  left: 4px;
-  position: relative;
-  top: 4px;
-  width: 7px;
-}
-
-input[type='radio']:checked:after {
-  background-color: #f66;
-}
-
-.question-card button {
+.next {
   padding: 0.5rem;
   outline: none;
-  background-color: var(--white);
+  background-color: var(--main-color);
   border: none;
+  width: 15rem;
+  font-size: 2rem;
+  font-weight: 500;
+  border-radius: 1rem;
+  margin-top: 4rem;
+  color: white;
 }
+
 /*! End Of Questions Section */
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 5rem;
   text-transform: uppercase;
   color: var(--white);
   text-shadow: 2px 2px 5px var(--black);
