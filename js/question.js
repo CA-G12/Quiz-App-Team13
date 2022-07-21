@@ -24,9 +24,34 @@ const questions = [{
     question: 'مين اللي نازل كع و شال عشانكوا الهم مين؟',
     answers: ["عبدالله", "صافي", "باااابا", "اسحق"],
     answer: "باااابا",
+},
+{
+    question: 'مين حبيب بابا؟',
+    answers: ['باسل', 'فادي', 'الوادية', 'أنا'],
+    answer: 'أنا',
+}, 
+{
+    question: 'مين روح بابا؟',
+    answers: ['علي', 'سامي', 'أنا', 'كاكاشي'],
+    answer: 'أنا',
+},
+{
+    question: 'مين لما تكح يترعب؟',
+    answers: ["محمد عبد الهادي", "لينا", "رغد", "باااابا"],
+    answer: "باااابا",
+},
+{
+    question: 'علشان خاطر مين بابا يخاطر يتعب 100 سنة؟',
+    answers: ["سيف", "أنا", "البعاليش", "حماد"],
+    answer: "أنا",
+},
+{
+    question: 'مين اللي نازل كع و شال عشانكوا الهم مين؟',
+    answers: ["عبدالله", "صافي", "باااابا", "اسحق"],
+    answer: "باااابا",
 }];
 
-//Questions Numbers Name
+//Questions Numbers and Names Map
 const questionNumberName = {
     1  :  "السؤال الأول",
     2 :  "السؤال الثاني",
@@ -62,7 +87,7 @@ function initGame() {
 
 // Display Questions
 function displayQuestions(question) {
-    if (index < 5) {
+    if (index < 10) {
         document.getElementById('questionName').innerText = question.question;
         document.getElementById('questionNumber').innerText = questionNumberName[index+1];
         for (let i = 0; i < question.answers.length; i++) {
@@ -83,8 +108,8 @@ function displayQuestions(question) {
 
         document.getElementById('nextQuestion').addEventListener('click', nextQuestion);
     } else {
-        alert('You got ' + score + ' out of 4');
-    }
+        document.getElementById('questionsSection').remove();
+        }
 }
 
 

@@ -1,26 +1,21 @@
-const leaderBoard = [
-    {
-        username: "Fadi", 
-        score: 10
-    }, 
-    {
-        username: "Mohammed", 
-        score: 10
-    }, 
-    {
-        username: "Basel", 
-        score: 10
-    }, 
-    {
-        username: "Tareq", 
-        score: 10
-    }, 
-    {
-        username: "Yehya", 
-        score: 10
-    }, 
-]; 
+const users = []; 
+
+document.getElementById('clickStart').addEventListener('click', function(){
+    const userNameInput = document.getElementById('userNameInput');
+    if(userNameInput.value === ""){
+    alert("Please enter a username");
+     } else{
+        let userName = userNameInput.value;
+        let user = {
+            userName: userName,
+            score: 0
+        }
+        users.push(user); 
+        location.href = "./html/question.html"; 
+        localStorage.setItem('users', JSON.stringify(users));
+    }
+});
+
 
 
 //Store Leaderboard in local storage
-localStorage.setItem('questions', JSON.stringify(questions));
