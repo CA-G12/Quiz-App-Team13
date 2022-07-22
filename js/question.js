@@ -85,14 +85,10 @@ function initGame() {
     const FIRST_QUESTION = setOfQuestions[0];
     document.getElementById('socreSection').style.display = "none";
     displayQuestions(FIRST_QUESTION);
-
 }
 
 // Display Questions
 function displayQuestions(question) {
-    console.log(score);
-    
-    
     if (index < 10) {
         document.getElementById('questionName').innerText = question.question;
         document.getElementById('questionNumber').innerText = questionNumberName[index+1];
@@ -106,8 +102,8 @@ function displayQuestions(question) {
         document.getElementById('nextQuestion').addEventListener('click', nextQuestion);
 
     } else {
-        // let foundUser = usersData.filter(el => el.id === currentUserId);
         usersData[currentUserId].score = score;
+        localStorage.setItem('users', JSON.stringify(usersData));
         finishGame();
     }
 }
@@ -115,14 +111,11 @@ function displayQuestions(question) {
 
 //Get Next Question
 function nextQuestion() {   
-    
     //Get the users answer and Increase the score if correct
    let usersAnswer = document.querySelector('input[name="answer"]:checked');
    if (usersAnswer.value === questions[index].answer) {
     score += 1;
     }
-
-   console.log(usersAnswer.value);
 
     index += 1;
     displayQuestions(questions[index]);
@@ -132,6 +125,17 @@ function finishGame(){
     document.getElementById('questionsSection').remove();
     document.getElementById('socreSection').style.display = "flex";
     document.getElementById('userScore').innerHTML = score + "/10"; 
+    document.getElementById('backToaMain').addEventListener('click', backToMain);
+    document.getElementById('resetQuiz').addEventListener('click', resetQuiz);
+}
+
+function backToMain(){
+    window.location.href = "../index.html";
+}
+function resetQuiz(){
+    score = 0; 
+    index = 0;
+    window.location.href = "./question.html?id=" + currentUserId; 
 }
 
 
