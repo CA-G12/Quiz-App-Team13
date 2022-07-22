@@ -152,6 +152,12 @@ main {
   text-align: center;
 }
 
+.error {
+  color: red; 
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
 /* leaderboard box style ends */
 
 /* play section style start */

@@ -1,20 +1,24 @@
 const users = []; 
 
+
 initUser();
 
+
+// function to initialize user //
 function initUser(){
     let userId = 0; 
     if(localStorage.getItem('users') === null){
          userId = 0;
     } else{
         let usersFromLocalStorage = JSON.parse(localStorage.getItem('users'));
-        userId = usersFromLocalStorage.length;
+         userId = usersFromLocalStorage.length;
     }
     saveUser(userId); 
-    loadStoryBorad();
+    loadLeaderBorad();
 }
 
-function loadStoryBorad(){
+// function to load leader board //
+function loadLeaderBorad(){
     let usersFromLocalStorage = JSON.parse(localStorage.getItem('users'));
     let sortedScore = usersFromLocalStorage.sort((a,b) => (a.score < b.score) ? 1 : ((b.score < a.score) ? -1 : 0));
     for(let i =0; i < 5; i++){
@@ -25,11 +29,12 @@ function loadStoryBorad(){
     }
 }
 
+// function to save user //
 function saveUser(userId){
 document.getElementById('clickStart').addEventListener('click', function(){
     const userNameInput = document.getElementById('userNameInput');
     if(userNameInput.value === ""){
-         alert("Please enter a username");
+         document.getElementById('userNameError').innerHTML = "الرجاء إدخال اسم المستخدم";
      } else{
         let userName = userNameInput.value;
         let user = {
@@ -53,5 +58,3 @@ document.getElementById('clickStart').addEventListener('click', function(){
 });
 }
 
-
-//Store Leaderboard in local storage
