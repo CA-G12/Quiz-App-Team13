@@ -8,9 +8,21 @@ function initUser(){
          userId = 0;
     } else{
         let usersFromLocalStorage = JSON.parse(localStorage.getItem('users'));
-         userId = usersFromLocalStorage.length;
+        userId = usersFromLocalStorage.length;
     }
     saveUser(userId); 
+    loadStoryBorad();
+}
+
+function loadStoryBorad(){
+    let usersFromLocalStorage = JSON.parse(localStorage.getItem('users'));
+    let sortedScore = usersFromLocalStorage.sort((a,b) => (a.score < b.score) ? 1 : ((b.score < a.score) ? -1 : 0));
+    for(let i =0; i < 5; i++){
+        let user = sortedScore[i];
+        let userTd = document.createElement('tr');
+        userTd.innerHTML = `<td>${user.userName}</td><td>${user.score}</td>`;
+        document.getElementById('leaderBoardTable').appendChild(userTd);
+    }
 }
 
 function saveUser(userId){

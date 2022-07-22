@@ -133,7 +133,7 @@ main {
 }
 
 .leaderboard table tbody {
-  margin-top: 1rem;
+  margin-top: 0.1rem;
 }
 
 .leaderboard table tbody tr {
