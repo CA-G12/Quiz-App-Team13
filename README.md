@@ -31,7 +31,7 @@ View the app on [GitHub Pages](https://ca-g12.github.io/Quiz-App-Team13/index.ht
   - [figam design](https://www.figma.com/file/azimw5DogPhBsO3ngb9rr8/Untitled)
  
  
-##Screenshots: 
+## Screenshots: 
   <img width="1509" alt="Screen Shot 2022-07-23 at 1 54 37 PM" src="https://user-images.githubusercontent.com/43090330/180602120-3a852020-a304-483b-aef9-9cd744835b9e.png">
 <img width="1496" alt="Screen Shot 2022-07-23 at 1 55 39 PM" src="https://user-images.githubusercontent.com/43090330/180602147-9330188c-a432-4874-b009-a38de453ee3f.png"><img width="1498" alt="Screen Shot 2022-07-23 at 1 56 02 PM" src="https://user-images.githubusercontent.com/43090330/180602163-e97e706c-eae7-4294-a236-2a2fed12c629.png">
 <img width="1507" alt="Screen Shot 2022-07-23 at 1 57 40 PM" src="https://user-images.githubusercontent.com/43090330/180602217-aa7df1dd-d6af-4b54-9ed1-df286a390600.png">
